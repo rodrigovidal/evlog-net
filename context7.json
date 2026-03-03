@@ -1,0 +1,11 @@
+{
+  "projectTitle": "Evlog",
+  "description": "Wide events structured logging for ASP.NET Core. One comprehensive log event per request instead of scattered log lines.",
+  "excludeFolders": ["tests", "docs/plans"],
+  "rules": [
+    "Use context.GetEvlogLogger() to get the request-scoped logger in ASP.NET Core endpoints",
+    "Use Set(new { ... }) for ergonomic anonymous object logging, Set(key, value) for zero-alloc typed logging",
+    "Use EvlogError.Create() for structured errors with Why/Fix fields",
+    "Register with builder.Services.AddEvlog() and app.UseEvlog()"
+  ]
+}
