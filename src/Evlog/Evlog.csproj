@@ -9,7 +9,7 @@
     <!-- NuGet package metadata -->
     <PackageId>Evlog</PackageId>
     <Version>0.0.1-beta</Version>
-    <Authors>Rodrigo Vidal Araujo</Authors>
+    <Authors>Rodrigo Vidal</Authors>
     <Description>Wide events structured logging for ASP.NET Core. One comprehensive log event per request instead of scattered log lines.</Description>
     <PackageTags>logging;structured-logging;wide-events;aspnetcore;observability</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
