@@ -5,6 +5,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Evlog</RootNamespace>
+
+    <!-- NuGet package metadata -->
+    <PackageId>Evlog</PackageId>
+    <Version>0.0.1-beta</Version>
+    <Authors>Rodrigo Vidal Araujo</Authors>
+    <Description>Wide events structured logging for ASP.NET Core. One comprehensive log event per request instead of scattered log lines.</Description>
+    <PackageTags>logging;structured-logging;wide-events;aspnetcore;observability</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>PACKAGE.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/rodrigovidalaraujo/evlog.net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +24,10 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="Evlog.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="PACKAGE.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
