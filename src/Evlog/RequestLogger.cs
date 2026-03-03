@@ -194,6 +194,31 @@ public sealed class RequestLogger : IResettable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void Debug(string message)
+    {
+        if (!_active) return;
+        _requestLogs.Add(new RequestLogEntry
+        {
+            Level = EvlogLevel.Debug,
+            Message = message,
+            Timestamp = DateTimeOffset.UtcNow,
+        });
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void Debug(string message, string? category)
+    {
+        if (!_active) return;
+        _requestLogs.Add(new RequestLogEntry
+        {
+            Level = EvlogLevel.Debug,
+            Message = message,
+            Timestamp = DateTimeOffset.UtcNow,
+            Category = category,
+        });
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Error(Exception ex, string? message = null)
     {
         if (!_active) return;
@@ -204,6 +229,21 @@ public sealed class RequestLogger : IResettable
             Level = EvlogLevel.Error,
             Message = message ?? ex.Message,
             Timestamp = DateTimeOffset.UtcNow,
+        });
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void Error(Exception ex, string? message, string? category)
+    {
+        if (!_active) return;
+        _error = ex;
+        _errorMessage = message;
+        _requestLogs.Add(new RequestLogEntry
+        {
+            Level = EvlogLevel.Error,
+            Message = message ?? ex.Message,
+            Timestamp = DateTimeOffset.UtcNow,
+            Category = category,
         });
     }
 
